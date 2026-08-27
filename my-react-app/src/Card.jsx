@@ -1,13 +1,13 @@
-import s from "./assets/s.png";
+import profilePic from "./assets/2.jpg";
 
-function card() {
+function Card() {
   return (
     <div className="card">
-      <img src={s} alt="profile picture"></img>
-      <h2>Degea</h2>
-      <p>i code and play video games</p>
+      <img className="card-image" src={profilePic} alt="profile picture"></img>
+      <h2 className="card-title">Degea</h2>
+      <p className="card-text">i code and play video games</p>
     </div>
   );
 }
 
-export default card;
+export default Card;

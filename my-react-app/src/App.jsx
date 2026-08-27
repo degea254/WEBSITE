@@ -1,7 +1,13 @@
 import Card from "./Card.jsx";
 
 function App() {
-  return <card />;
+  return (
+    <>
+      <Card />;
+      <Card />;
+      <Card />;
+    </>
+  );
 }
 
 export default App;
