@@ -8,6 +8,8 @@ function App() {
       <Student name="Totti" age={22} isStudent={true} />
 
       <Student name="kangentu" age={12} isStudent={true} />
+
+      <Student />
     </>
   );
 }
