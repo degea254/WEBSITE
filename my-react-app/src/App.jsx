@@ -1,11 +1,6 @@
-import Button from "./Button";
-import ProfilePicture from "./ProfilePicture";
+import Counter2 from "./Counter2";
 
 function App() {
-  return (
-    <div>
-      <ProfilePicture size="50px" />
-    </div>
-  );
+  return <Counter2 />;
 }
 export default App;
