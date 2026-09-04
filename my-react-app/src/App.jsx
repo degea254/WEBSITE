@@ -1,6 +1,7 @@
-import Counter2 from "./Counter2";
+import react, { useState } from "react";
+import MyComponent from "./MyComponent";
 
 function App() {
-  return <Counter2 />;
+  return <MyComponent />;
 }
 export default App;

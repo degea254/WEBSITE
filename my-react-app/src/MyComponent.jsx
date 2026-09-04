@@ -1,32 +1,79 @@
 import React, { useState } from "react";
 
 function MyComponent() {
-  const [name, setName] = useState("John Doe");
-  const [age, setAge] = useState(30);
-  const [isEmployed, setIsEmployed] = useState(false);
+  const [name, setName] = useState("guest");
+  const [quantity, setQuantity] = useState(1);
+  const [comment, setComment] = useState("");
+  const [payment, setPayment] = useState("cash");
+  const [shipping, setShipping] = useState("delivery");
 
-  const updateName = () => {
-    setName("joseph ");
-  };
+  function handleCommentChange(event) {
+    setComment(event.target.value);
+  }
 
-  const incrementAge = () => {
-    setAge(age + 2);
-  };
+  function handleNameChange(event) {
+    setName(event.target.value);
+  }
 
-  const toggleEmploymentStatus = () => {
-    setIsEmployed(!isEmployed);
-  };
+  function handleQuantityChange(event) {
+    setQuantity(event.target.value);
+  }
+
+  function handlePaymentChange(event) {
+    setPayment(event.target.value);
+  }
+
+  function handleShippingChange(event) {
+    setShipping(event.target.value);
+  }
 
   return (
     <div>
-      <p>name:{name}</p>
-      <button onClick={updateName}>set name</button>
+      <input type="text" value={name} onChange={handleNameChange}></input>
+      <p>Hello, {name}!</p>
 
-      <p>age:{age}</p>
-      <button onClick={incrementAge}>increment age</button>
+      <input
+        type="number"
+        value={quantity}
+        onChange={handleQuantityChange}
+      ></input>
+      <p>Quantity: {quantity}</p>
 
-      <p>Is Employed {isEmployed ? "Yes" : "No"}</p>
-      <button onClick={toggleEmploymentStatus}>Toggle Status</button>
+      <textarea
+        value={comment}
+        onChange={handleCommentChange}
+        placeholder="enter delivery comments..."
+      ></textarea>
+      <p>Comment: {comment}</p>
+
+      <select value={payment} onChange={handlePaymentChange}>
+        <option value="">Select Payment Method</option>
+        <option value="cash">Cash</option>
+        <option value="card">Card</option>
+        <option value="paypal">PayPal</option>
+      </select>
+      <p>Payment Method: {payment}</p>
+
+      <label htmlFor="pickup">pick up</label>
+      <input
+        type="radio"
+        id="pickup"
+        name="shipping"
+        value="pickup"
+        checked={shipping === "pickup"}
+        onChange={handleShippingChange}
+      />
+
+      <label htmlFor="delivery">delivery</label>
+      <input
+        type="radio"
+        id="delivery"
+        name="shipping"
+        value="delivery"
+        checked={shipping === "delivery"}
+        onChange={handleShippingChange}
+      />
+      <p>Shipping Method: {shipping}</p>
     </div>
   );
 }
