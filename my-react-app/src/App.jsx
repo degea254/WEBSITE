@@ -1,7 +1,7 @@
 import react, { useState } from "react";
-import MyComponent from "./MyComponent";
+import ColorPicker from "./ColorPicker";
 
 function App() {
-  return <MyComponent />;
+  return <ColorPicker />;
 }
 export default App;
